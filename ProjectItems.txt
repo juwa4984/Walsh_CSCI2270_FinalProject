@@ -1,0 +1,21 @@
+Primer,Urban Deacy,Eyeshadow Primer Potion,20,0
+Primer,Benefit,Porefessional,30,0
+Primer,Smashbox,Photo Finish,40,0
+Primer,Too Faced,Primed and Poreless,40,0
+Foundation,Make Up Forever,HD Invisible Cover,43,0
+Foundation,Smashbox,Camera Ready BB,35,0
+Foundation,Clinique,Even Better,27,0
+Foundation,L'Oreal,Forever Matte,13,0
+Mascara,Maybelline,Lash Stiletto,10,0
+Mascara,Benefit,They're Real,20,0
+Mascara,ELF,Basic,4,0
+Eyeshadow,Urban Decay,Midnight Rodeo,13,0
+Eyeshadow,Stella,Kitten,18,0
+Eyeshadow,Maybelline,The Nudes,8,0
+Eyeshadow,Dior,Nude,30,0
+Face Wash,Neutrogena,Deep Clean,9,0
+Face Wash,Clearasil,Ultra,9,0
+Face Wash,Philosophy,Simple Made Simple,13,0
+Moisturizer,Clinique,Dramatically Different,20,0
+Moisturizer,Ponds,Dark Spot Correcting,8,0
+Moisturizer,Vaseline,Classic Moisturizer,6,0
