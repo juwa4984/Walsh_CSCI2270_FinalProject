@@ -17,6 +17,7 @@ int main(){
 	ifstream fn;
 	fn.open("ProjectItems.txt");
 	string line;
+	//separate lines by commas
 	while (getline(fn,line)){
 		stringstream iss(line);
 		string category;
@@ -36,32 +37,56 @@ int main(){
 
 
 	}
-	cout<<endl;
-			cout<<"~ Welcome to my beauty shop ~"<<endl;
-			cout<<"What are your three favorite products to use? Choose from the following. Type in the product name exactly as shown, hitting enter after each one."<< endl;
-			cout<<"* Primer *"<<endl;
-			cout<<"* Foundation *"<<endl;
-			cout<<"* Mascara *"<<endl;
-			cout<<"* Eyeshadow *"<<endl;
-			cout<<"* Face Wash *"<<endl;
-			cout<<"* Moisturizer *"<<endl;
+		cout<<endl;
+		cout<<"~ Welcome to my beauty shop ~"<<endl;
+		cout<<"What are your three favorite products to use? Choose from the following. Type in the product name exactly as shown, hitting enter after each one."<< endl;
+		cout<<"* Primer *"<<endl;
+		cout<<"* Foundation *"<<endl;
+		cout<<"* Mascara *"<<endl;
+		cout<<"* Eyeshadow *"<<endl;
+		cout<<"* Face Wash *"<<endl;
+		cout<<"* Moisturizer *"<<endl;
 			
-			string input1;
+		string input1;
+		cout<<"Product 1: "<<endl;
+		cin>>ws;
+		getline(cin,input1);
+		/*
+		 * Not sure why this error checking isn't working
+		if(input1 != "Primer" || input1 != "Foundation"||input1!="Mascara"||input1!="Eyeshadow"||input1!="Face Wash"||input1!="Moisturizer"){
+			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 1: "<<endl;
 			cin>>ws;
 			getline(cin,input1);
+		}*/
 			
 			
-			string input2;
+		string input2;
+		cout<<"Product 2: "<<endl;
+		cin>>ws;
+		getline(cin,input2);
+		/*
+		if(input2 != "Primer" || input2!= "Foundation"||input2!="Mascara"||input2!="Eyeshadow"||input2!="Face Wash"||input2!="Moisturizer"){
+			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 2: "<<endl;
 			cin>>ws;
 			getline(cin,input2);
+		}*/
 			
 			
-			string input3;
+		string input3;
+		cout<<"Product 3: "<<endl;
+		cin>>ws;
+		getline(cin,input3);
+		/*
+		if(input3 != "Primer" || input3!= "Foundation"||input3!="Mascara"||input3!="Eyeshadow"||input3!="Face Wash"||input3!="Moisturizer"){
+			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 3: "<<endl;
 			cin>>ws;
 			getline(cin,input3);
+		}*/
+		
+		//traverse tree based on user input
 			
 			if(input1=="Primer"||input2=="Primer"||input3=="Primer"){
 				myTree->internalTraversePrimer("Primer");
@@ -84,21 +109,24 @@ int main(){
 			cout<<"The following products may fit more of what you like. "<<endl;
 			myTree->printInventoryAfter();
 			
-			
+			//ask if more info is wanted
 			cout<<"If you would like information on any of the following products, please type 'More Info' at any time. If not, please type 'Continue'."<<endl;
 			string moreInfo;
 			cin>>ws;
 			getline(cin,moreInfo);
-
-				if(moreInfo == "More Info"){
-					cout<<"Type the name of the product you would like to see.  (Name is part after colon)." <<endl;
+			//need to figure out how to make this ask the user multiple times if they want to see more that one product
+			if(moreInfo == "More Info"){
+				cout<<"Type the name of the product you would like to see.  (Name is part after colon)." <<endl;
 				string productToFind;
 				cin>>ws;
 				getline(cin,productToFind);
 				myTree->findProduct(productToFind);
 				cout<<endl;
+			
 			}
 		
+			
+			
 			cout<<"Type in the names of your favorite 5 products: "<<endl;
 			string prod1;
 			cout<<"Product 1: "<<endl;
@@ -134,10 +162,7 @@ int main(){
 			myTree->findForCart(prod5,5);
 			
 		myTree->displayTotal();
-			
-			
-		
-		
+					
 			
 		
 			

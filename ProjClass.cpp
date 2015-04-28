@@ -16,15 +16,15 @@ MakeupTree:: ~MakeupTree(){
 }
 void MakeupTree::addProduct(string type, string brand, string title, int price, int pts){
 	MakeupNode *tempMovie = new MakeupNode(type, brand, title, price,pts);
-	//cout<<tempMovie->title<<"temp title"<<endl;
-	int counter=0;
+
+	 int counter=0;
+	 //first node
 	 if(root == NULL){ 
 		root = tempMovie;
 		root->leftChild = NULL;
 		root->rightChild = NULL;
 		root->parent = NULL;
-		
-    } 
+	 } 
   
 	else{
 		MakeupNode *y=NULL;
@@ -33,24 +33,16 @@ void MakeupTree::addProduct(string type, string brand, string title, int price, 
 		
 		counter++;
 		const char* charTitle =title.c_str();
-		//cout<<root->title<<endl;
+		
 		while(x!=NULL){
-			//cout<<"inside"<<endl;
 			y=x;
 			string titleX=x->title;
-			
-			const char* charTitleX = titleX.c_str();
-
-			
-			//cout<<"x title: " <<charTitleX<<endl;
-			//cout<<"Char title: "<<charTitle<<endl;
+			const char* charTitleX = titleX.c_str();	
+			//new title is greater than root
 			if(strcmp(charTitleX,charTitle)>0){
-				//Sh <Th want th to go new > root is right 
-				//x=x->rightChild;
 				x=x->leftChild;
 			}
 			else{
-				//x=x->leftChild;
 				x=x->rightChild;
 			}
 		}
@@ -58,14 +50,12 @@ void MakeupTree::addProduct(string type, string brand, string title, int price, 
 		string titleY=y->title;
 		const char* charTitleY = titleY.c_str();
 		if(strcmp(charTitleY,charTitle)>0){
-			//y->rightChild=z;
 			y->leftChild=z;
 			z->leftChild=NULL;
 			z->rightChild=NULL;
 		}
 		else{
 			y->rightChild=z;
-			//y->leftChild=z;
 			z->leftChild=NULL;
 			z->rightChild=NULL;
 		}
@@ -78,12 +68,14 @@ void MakeupTree::addProduct(string type, string brand, string title, int price, 
 
 
 
-
+//all of these can probably be implemented by one function, but I couldn't figure out how to do it and make it work.
+//it kept incrementing the points for types other than the one found.
 
 
 void MakeupTree::internalTraverseFoundation(std::string type){
 	traverseFoundation(root,type);
 }
+//traverse the tree and if it is of type foundation, add points
 void MakeupTree::traverseFoundation(MakeupNode * node, std::string type){
 	if(node->leftChild!=NULL){
 		traverseFoundation(node->leftChild,type);
@@ -96,7 +88,7 @@ void MakeupTree::traverseFoundation(MakeupNode * node, std::string type){
 		traverseFoundation(node->rightChild,type);
 	}
 }
-
+//same as above but for primer
 void MakeupTree::internalTraversePrimer(std::string type){
 	traversePrimer(root,type);
 }
@@ -177,9 +169,9 @@ void MakeupTree::traverseMoisturizer(MakeupNode * node, std::string type){
 	}
 }
 
+//traverse tree and print inventory if points are = 1
 void MakeupTree::printInventoryAfter(MakeupNode * node){
 
-	
 	if(node->leftChild!=NULL){
 		printInventoryAfter(node->leftChild);
 	}
@@ -194,6 +186,7 @@ void MakeupTree::printInventoryAfter(MakeupNode * node){
 void MakeupTree::printInventoryAfter(){
 	printInventoryAfter(root);
 }
+
 
 MakeupNode* MakeupTree::searchMakeupTree(MakeupNode * node, std::string ttl){
 
@@ -236,22 +229,19 @@ MakeupNode *foundProduct = searchMakeupTree(root,title);
 }
 
 void MakeupTree::findForCart(std::string title,int pos){
-MakeupNode *foundProduct = searchMakeupTree(root,title);
-
-
+	//add product price to array
+	MakeupNode *foundProduct = searchMakeupTree(root,title);
 	shoppingCart[pos-1]=foundProduct->price;
-	cout<<shoppingCart[pos-1]<<endl;
-
-		
+	
 }
 
 void MakeupTree::displayTotal(){
+	//print array of chosen products
 	int sum=0;
 		for(int i=0; i<5; i++){
 			cout<<shoppingCart[i]<<endl;
 			sum+=shoppingCart[i];
 		}
-	
 		cout<<"Your total is $"<<sum<<endl;
 }
 
