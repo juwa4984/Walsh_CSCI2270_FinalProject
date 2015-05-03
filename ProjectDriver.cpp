@@ -49,42 +49,41 @@ int main(){
 			
 		string input1;
 		cout<<"Product 1: "<<endl;
-		cin>>ws;
+		
 		getline(cin,input1);
-		/*
-		 * Not sure why this error checking isn't working
+
 		if(input1 != "Primer" || input1 != "Foundation"||input1!="Mascara"||input1!="Eyeshadow"||input1!="Face Wash"||input1!="Moisturizer"){
 			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 1: "<<endl;
-			cin>>ws;
+			
 			getline(cin,input1);
-		}*/
+		}
 			
 			
 		string input2;
 		cout<<"Product 2: "<<endl;
-		cin>>ws;
+		
 		getline(cin,input2);
-		/*
+		
 		if(input2 != "Primer" || input2!= "Foundation"||input2!="Mascara"||input2!="Eyeshadow"||input2!="Face Wash"||input2!="Moisturizer"){
 			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 2: "<<endl;
-			cin>>ws;
+			
 			getline(cin,input2);
-		}*/
+		}
 			
 			
 		string input3;
 		cout<<"Product 3: "<<endl;
-		cin>>ws;
+		
 		getline(cin,input3);
-		/*
+		
 		if(input3 != "Primer" || input3!= "Foundation"||input3!="Mascara"||input3!="Eyeshadow"||input3!="Face Wash"||input3!="Moisturizer"){
 			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 3: "<<endl;
-			cin>>ws;
+			
 			getline(cin,input3);
-		}*/
+		}
 		
 		//traverse tree based on user input
 			
@@ -112,13 +111,13 @@ int main(){
 			//ask if more info is wanted
 			cout<<"If you would like information on any of the following products, please type 'More Info' at any time. If not, please type 'Continue'."<<endl;
 			string moreInfo;
-			cin>>ws;
+			
 			getline(cin,moreInfo);
 			//need to figure out how to make this ask the user multiple times if they want to see more that one product
 			if(moreInfo == "More Info"){
 				cout<<"Type the name of the product you would like to see.  (Name is part after colon)." <<endl;
 				string productToFind;
-				cin>>ws;
+				
 				getline(cin,productToFind);
 				myTree->findProduct(productToFind);
 				cout<<endl;
@@ -130,34 +129,34 @@ int main(){
 			cout<<"Type in the names of your favorite 5 products: "<<endl;
 			string prod1;
 			cout<<"Product 1: "<<endl;
-			cin>>ws;
+			
 			getline(cin,prod1);
 			myTree->findForCart(prod1,1);
 			
 			
 			string prod2;
 			cout<<"Product 2: "<<endl;
-			cin>>ws;
+			
 			getline(cin,prod2);
 			myTree->findForCart(prod2,2);
 			
 			
 			string prod3;
 			cout<<"Product 3: "<<endl;
-			cin>>ws;
+			
 			getline(cin,prod3);
 			myTree->findForCart(prod3,3);
 			
 			string prod4;
 			cout<<"Product 4: "<<endl;
-			cin>>ws;
+			
 			getline(cin,prod4);
 			myTree->findForCart(prod4,4);
 			
 			
 			string prod5;
 			cout<<"Product 5: "<<endl;
-			cin>>ws;
+			
 			getline(cin,prod5);
 			myTree->findForCart(prod5,5);
 			
