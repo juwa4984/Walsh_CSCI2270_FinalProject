@@ -49,16 +49,15 @@ int main(){
 			
 		string input1;
 		cout<<"Product 1: "<<endl;
-		cin>>ws;
+		
 		getline(cin,input1);
-		/*
-		 * Not sure why this error checking isn't working
+
 		if(input1 != "Primer" || input1 != "Foundation"||input1!="Mascara"||input1!="Eyeshadow"||input1!="Face Wash"||input1!="Moisturizer"){
 			cout<<"Please check your input and type it again"<<endl;
 			cout<<"Product 1: "<<endl;
-			cin>>ws;
+			
 			getline(cin,input1);
-		}*/
+		}
 			
 			
 		string input2;
